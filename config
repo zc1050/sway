@@ -41,8 +41,8 @@ set $menu wofi --show
 # exec kitty tmux new-session -A -d -s Container "sudo machinectl shell tang@test"
 
 
-exec alacritty -e tmux new-session -A -s Host
-exec alacritty -e tmux new-session -A -d -s Container "sudo machinectl shell tang@test"
+exec alacritty -e tmux new-session -A -s Main "htop"
+# exec alacritty -e tmux new-session -A -d -s Container "sudo machinectl shell tang@test"
 # exec alacritty -e tmux new-session -A -d -s Container
 
 for_window [shell="xwayland"] title_format "[XWayland] %title"
@@ -300,11 +300,12 @@ bar {
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
     # status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    # status_command while date +'%Y-%m-%d %H:%M'; do sleep 1; done
     swaybar_command waybar
 
     # colors {
     #     statusline #ffffff
-    #     background #323232
+    #     # background #323232
     #     inactive_workspace #32323200 #32323200 #5c5c5c
     # }
 }
